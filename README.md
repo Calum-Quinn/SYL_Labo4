@@ -57,9 +57,15 @@ Il n'y a pas de raison de trouver des équations pour les sorties car elles ne d
 
 ### Etats Futurs
 $$idle^+ = idle * \overline{ready} + throw + moveInit * done$$
+
 $$scan^+ = idle * ready + scan * color1 * color2$$
+
 $$throw^+ = scan * \overline{color1} * \overline{color2}$$
+
 $$moveBlue^+ = scan * color1 * \overline{color2} + moveBlue * \overline{done}$$
+
 $$moveRed^+ = scan * \overline{color1} * color2 + moveRed * \overline{done}$$
+
 $$drop^+ = moveBlue * done + moveRed * done$$
+
 $$moveInit^+ = drop + moveInit * \overline{done}$$
