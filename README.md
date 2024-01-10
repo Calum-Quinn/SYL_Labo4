@@ -39,6 +39,7 @@ Le graphe d'état correspondant à notre machine est la suivante:
 
 ### Table des états
 Voici la table des états correspondant au graphe ci-dessus:
+
 ![Table des Etats](TableEtat.png)
 
 ### Création des équations
