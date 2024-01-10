@@ -2,9 +2,7 @@
 
 # SYL_Labo4
 
-## Machine d'état
-
-### Analyse des entrées
+## Analyse des entrées
 
 Le circuit original comprend les entrées `ready_i`, `color_i`, `clk_i` et `reset_i`.
 - `ready_i` : Arrive seulement lorsque le bras est en position initiale pour dire qu'il peut procéder au scan d'une boîte. 
@@ -19,7 +17,7 @@ Le circuit original comprend les entrées `ready_i`, `color_i`, `clk_i` et `rese
 Ces entrées à elles seules ne nous permettent pas de faire tous les changements d'états de la façon demandée. Pour ça il nous faudra une entrée supplémentaire `compteur_done` qui servira à nous dire si le bras à fini de se déplacer car celui-ci prend 3 coups d'horloge pour se déplacer.
 Cette entrée fonctionne en utilisant un décompteur qui renvoi `1` quand il arrive à `0`.
 
-### Analyse des sorties
+## Analyse des sorties
 
 Les sorties correspondent simplement à la prochaine chose à faire soit au prochain état de la machine.
 - `scan_o` : 1 quand la prochaine chose à faire c'est scanner une pièce
@@ -32,25 +30,35 @@ Les sorties correspondent simplement à la prochaine chose à faire soit au proc
 
 Le bras étant une machine d'état séquenciel de MOORE, les sorties dépendent uniquement de l'état actuel et non pas des entrées.
 
-### Graphe des états
+## Graphe des états
 Le graphe d'état correspondant à notre machine est la suivante:
 
 ![Graphe des Etats](SYL_4.svg)
 
-### Table des états
+## Table des états
 Voici la table des états correspondant au graphe ci-dessus:
 ![Table des Etats](TableEtat.png)
 
-### Création des équations
+## Création des équations
 Pour la création des équation nous nous sommes basé sur la table des états. La machine étant MOORE, les sorties sont facile à définir selon l'état actuel surtout puisque nous avons utilisé la notation 1 parmi M qui nous permet de regarder qu'un seul bit de l'état pour définir chaque sortie.
 
-#### Sorties
+### Sorties
+Il n'y a pas de raison de trouver des équations pour les sorties car elles ne dépendent que de l'état présent qui lui n'a qu'un bit à 1. Ceci veut dire que nous pouvons simplement controler si un certain bit est à 1, si c'est le cas la sortie vaut une constante prédéfinie.
+| Etat présent | Sortie  |
+|--------------|---------|
+| 0000001      | 0000000 |
+| 0000010      | 1000000 |
+| 0000100      | 0100000 |
+| 0001000      | 0010100 |
+| 0010000      | 0011000 |
+| 0100000      | 0000001 |
+| 1000000      | 0010010 |
 
-#### Etats Futurs
+### Etats Futurs
 $$idle^+ = idle * \overline{ready} + throw + moveInit * done$$
-scan+ = idle.ready + scan.color1.color2
-throw+ = scan./color1./color2
-moveBlue+ = scan.color1./color2 + moveBlue./done
-moveRed+ = scan./color1.color2 + moveRed./done
-drop+ = moveBlue.done + moveRed.done
-moveInit+ = drop + moveInit./done
+$$scan^+ = idle * ready + scan * color1 * color2$$
+$$throw^+ = scan * \overline{color1} * \overline{color2}$$
+$$moveBlue^+ = scan * color1 * \overline{color2} + moveBlue * \overline{done}$$
+$$moveRed^+ = scan * \overline{color1} * color2 + moveRed * \overline{done}$$
+$$drop^+ = moveBlue * done + moveRed * done$$
+$$moveInit^+ = drop + moveInit * \overline{done}$$
