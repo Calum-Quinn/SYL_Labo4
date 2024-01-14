@@ -14,8 +14,8 @@ Le circuit original comprend les entrées `ready_i`, `color_i`, `clk_i` et `rese
 - `clk_i` : Horloge
 - `reset_i` : Reset asynchrone de tout le système.
 
-Ces entrées à elles seules ne nous permettent pas de faire tous les changements d'états de la façon demandée. Pour ça il nous faudra une entrée supplémentaire `compteur_done` qui servira à nous dire si le bras à fini de se déplacer car celui-ci prend 3 coups d'horloge pour se déplacer.
-Cette entrée fonctionne en utilisant un décompteur qui renvoi `1` quand il arrive à `1`.
+Ces entrées à elles seules ne nous permettent pas de faire tous les changements d'états de la façon demandée. Pour ça il nous faudra un compteur qui nous donnera une valeur 'compteur_done' qui servira à nous dire si le bras à fini de se déplacer car celui-ci prend 3 coups d'horloge pour effectuer son déplacement.
+Ce compteur renvoi `1` quand il arrive à `1`.
 
 ## Analyse des sorties
 
