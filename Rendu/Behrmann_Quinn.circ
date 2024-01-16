@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project integrity="323fee50f317745569227f4245bcadf47a8fbe55" source="2.16.8.t" version="1.0">
-This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
-<lib desc="#Wiring" name="0">
+<project integrity="f5519c0390ee579152c1c0daca66af3d8dbcbeaa" source="2.16.8.t" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
+
+  <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="incoming" val="8"/>
       <a name="date" val="04.11.16 16:09:15"/>
@@ -351,13 +352,12 @@ end TCL_Generic;
     <wire from="(1160,360)" to="(1160,380)"/>
     <wire from="(1170,420)" to="(1170,440)"/>
     <wire from="(1160,430)" to="(1160,450)"/>
-    <wire from="(1190,470)" to="(1190,490)"/>
+    <wire from="(1170,460)" to="(1170,480)"/>
+    <wire from="(1150,440)" to="(1150,460)"/>
     <wire from="(1110,440)" to="(1150,440)"/>
-    <wire from="(1150,470)" to="(1190,470)"/>
     <wire from="(1070,310)" to="(1070,400)"/>
     <wire from="(250,310)" to="(620,310)"/>
     <wire from="(1080,410)" to="(1180,410)"/>
-    <wire from="(1150,440)" to="(1150,470)"/>
     <wire from="(270,270)" to="(270,290)"/>
     <wire from="(1110,310)" to="(1110,440)"/>
     <wire from="(1100,430)" to="(1160,430)"/>
@@ -373,7 +373,6 @@ end TCL_Generic;
     <wire from="(820,180)" to="(820,290)"/>
     <wire from="(1180,420)" to="(1190,420)"/>
     <wire from="(1180,460)" to="(1190,460)"/>
-    <wire from="(1190,490)" to="(1200,490)"/>
     <wire from="(340,180)" to="(820,180)"/>
     <wire from="(600,290)" to="(620,290)"/>
     <wire from="(250,250)" to="(340,250)"/>
@@ -389,6 +388,8 @@ end TCL_Generic;
     <wire from="(1170,380)" to="(1190,380)"/>
     <wire from="(1170,440)" to="(1190,440)"/>
     <wire from="(1160,450)" to="(1180,450)"/>
+    <wire from="(1150,460)" to="(1170,460)"/>
+    <wire from="(1170,480)" to="(1190,480)"/>
     <wire from="(270,270)" to="(340,270)"/>
     <wire from="(1090,310)" to="(1090,420)"/>
     <comp lib="0" loc="(250,230)" name="Pin">
@@ -445,17 +446,6 @@ end TCL_Generic;
       <a name="version" val="2.16.8.t"/>
       <a name="uuid" val="8712bbeb-1a92-4527-82ad-32c0c29c2300"/>
       <a name="integrity" val="8e8f70fa27cc1821cddbcf1c410b9ab78f88ff86"/>
-    </comp>
-    <comp lib="0" loc="(1200,490)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="drop_o"/>
-      <a name="labelloc" val="east"/>
-      <a name="owner" val="trr"/>
-      <a name="date" val="14.12.23 14:37:54"/>
-      <a name="version" val="2.16.8.t"/>
-      <a name="uuid" val="3d5f58a2-4041-4681-be69-4619e1c5316d"/>
-      <a name="integrity" val="a8ab885841d9710dab7c32ceee49ea29cee42705"/>
     </comp>
     <comp lib="0" loc="(1190,400)" name="Pin">
       <a name="facing" val="west"/>
@@ -514,6 +504,17 @@ end TCL_Generic;
       <a name="integrity" val="9ae2bb7125a48783f40ab24114a5382e0f562942"/>
     </comp>
     <comp loc="(790,290)" name="register_7bit"/>
+    <comp lib="0" loc="(1190,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="drop_o"/>
+      <a name="labelloc" val="east"/>
+      <a name="owner" val="trr"/>
+      <a name="date" val="14.12.23 14:37:54"/>
+      <a name="version" val="2.16.8.t"/>
+      <a name="uuid" val="3d5f58a2-4041-4681-be69-4619e1c5316d"/>
+      <a name="integrity" val="a8ab885841d9710dab7c32ceee49ea29cee42705"/>
+    </comp>
     <comp lib="7" loc="(4,50)" name="Text" trackercomp="true">
       <a name="text" val="Attention, votre version de Logisim"/>
       <a name="font" val="SansSerif plain 48"/>
